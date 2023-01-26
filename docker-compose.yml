@@ -10,7 +10,7 @@ services:
       - ./certs:/usr/src/shelf-back/certs
       - ./shelf-data:/usr/src/shelf-data
     ports:
-      - "8000:80"
+      - "2233:80"
     depends_on:
       - redis
       - edgedb
@@ -30,9 +30,9 @@ services:
   shelf-front:
     image: fdooch/shelf-front:0.1.0-alpha.12
     environment:
-      - API_BASE_URL=http://localhost:8000
+      - API_BASE_URL=http://localhost:2233
     ports:
-      - "8080:80"
+      - "2233:80"
     depends_on:
       - shelf-back
 
