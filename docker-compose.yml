@@ -10,7 +10,7 @@ services:
       - ./certs:/usr/src/shelf-back/certs
       - ./shelf-data:/usr/src/shelf-data
     ports:
-      - "2233:80"
+      - "2233:2233"
     depends_on:
       - redis
       - edgedb
@@ -32,7 +32,7 @@ services:
     environment:
       - API_BASE_URL=http://localhost:2233
     ports:
-      - "2233:80"
+      - "2233:2233"
     depends_on:
       - shelf-back
 
